@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:36:01
- * @LastEditTime: 2021-01-01 15:41:58
+ * @LastEditTime: 2021-01-04 10:30:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\database\migrations\2021_01_01_153601_creare_driver_table.php
@@ -27,6 +27,7 @@ class CreareDriverTable extends Migration
             $table -> string('number',20) -> notNull();
             $table -> string('password') -> notNull();
             $table -> string('phone',11) -> notNull();
+            $table -> string('manage_car',20) -> notNull();
             $table -> timestamp('add_time');
             $table -> rememberToken();
             $table -> enum('num_state',[0,1]) -> notNull() -> default(1);

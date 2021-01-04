@@ -2,8 +2,8 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:52:51
- * @LastEditTime: 2021-01-03 14:17:59
- * @LastEditors: your name
+ * @LastEditTime: 2021-01-04 10:36:34
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\DriverController.php
  */
@@ -37,11 +37,12 @@ class DriverController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('name', __('Name'));
         $grid->column('number', __('Number'));
-        $grid->column('password', __('Password'));
+        // $grid->column('password', __('Password'));
         $grid->column('phone', __('Phone'));
+        $grid->column('manage_car', __('Manage car'));
         $grid->column('add_time', __('Add time'));
-        $grid->column('remember_token', __('Remember token'));
-        $grid->column('num_state', __('Num state'));
+        // $grid->column('remember_token', __('Remember token'));
+        $grid->column('num_state', __('Num state'))->switch();
 
         return $grid;
     }
@@ -61,8 +62,9 @@ class DriverController extends AdminController
         $show->field('number', __('Number'));
         $show->field('password', __('Password'));
         $show->field('phone', __('Phone'));
+        $show->field('manage_car', __('Manage car'));
         $show->field('add_time', __('Add time'));
-        $show->field('remember_token', __('Remember token'));
+        // $show->field('remember_token', __('Remember token'));
         $show->field('num_state', __('Num state'));
 
         return $show;
@@ -81,8 +83,9 @@ class DriverController extends AdminController
         $form->text('number', __('Number'));
         $form->password('password', __('Password'));
         $form->mobile('phone', __('Phone'));
-        $form->datetime('add_time', __('Add time'))->default(date('Y-m-d H:i:s'));
-        $form->text('remember_token', __('Remember token'));
+        $form->text('manage_car', __('Manage car'));
+        // $form->datetime('add_time', __('Add time'))->default(date('Y-m-d H:i:s'));
+        // $form->text('remember_token', __('Remember token'));
         $form->text('num_state', __('Num state'))->default('1');
 
         return $form;

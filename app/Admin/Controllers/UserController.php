@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:52:38
- * @LastEditTime: 2021-01-03 14:17:50
+ * @LastEditTime: 2021-01-04 10:16:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\UserController.php
@@ -84,6 +84,7 @@ class UserController extends AdminController
         $form->datetime('reg_time', __('Reg time'))->default(date('Y-m-d H:i:s'));
         $form->text('remember_token', __('Remember token'));
         $form->text('user_state', __('User state'))->default('1');
+        
         return $form;
     }
 }
