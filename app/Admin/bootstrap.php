@@ -1,4 +1,12 @@
 <?php
+/*
+ * @Author: your name
+ * @Date: 2021-01-01 15:33:02
+ * @LastEditTime: 2021-01-05 18:20:52
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\bootstrap.php
+ */
 
 /**
  * Laravel-admin - admin builder based on Laravel.
@@ -18,4 +26,4 @@
  *
  */
 
-Encore\Admin\Form::forget(['map', 'editor']);
+Encore\Admin\Form::forget(['editor']);

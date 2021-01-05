@@ -2,8 +2,8 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:52:57
- * @LastEditTime: 2021-01-03 14:18:48
- * @LastEditors: your name
+ * @LastEditTime: 2021-01-04 23:22:44
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\StationController.php
  */
@@ -39,7 +39,8 @@ class StationController extends AdminController
         $grid->column('serial_num', __('Serial num'));
         $grid->column('circle_num', __('Circle num'));
         $grid->column('location', __('Location'));
-        $grid->column('longitute', __('Longitute'));
+        $grid->column('latitude', __('Latitude'));
+        $grid->column('longitude', __('Longitude'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -61,7 +62,7 @@ class StationController extends AdminController
         $show->field('serial_num', __('Serial num'));
         $show->field('circle_num', __('Circle num'));
         $show->field('location', __('Location'));
-        $show->field('longitute', __('Longitute'));
+        $show->field('经纬度')->latlong('latitude', 'longitude', $height = 400, $zoom = 16);
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -81,7 +82,7 @@ class StationController extends AdminController
         $form->text('serial_num', __('Serial num'));
         $form->text('circle_num', __('Circle num'));
         $form->text('location', __('Location'));
-        $form->decimal('longitute', __('Longitute'));
+        $form->latlong('latitude', 'longitude', '经纬度');
 
         return $form;
     }

@@ -2,8 +2,8 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:53:17
- * @LastEditTime: 2021-01-03 14:18:11
- * @LastEditors: your name
+ * @LastEditTime: 2021-01-05 23:28:30
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\EvaluationController.php
  */
@@ -78,7 +78,13 @@ class EvaluationController extends AdminController
         $form->text('order_num', __('Order num'));
         $form->text('driver', __('Driver'));
         $form->text('user', __('User'));
-        $form->text('grade', __('Grade'));
+        $form->radioButton('grade', __('Grade'))->options([
+            '一星' => '一星',
+            '二星' => '二星',
+            '三星' => '三星',
+            '四星' => '四星',
+            '五星' => '五星',
+            ]);
         $form->textarea('content', __('Content'));
         $form->datetime('evaluate_time', __('Evaluate time'))->default(date('Y-m-d H:i:s'));
 

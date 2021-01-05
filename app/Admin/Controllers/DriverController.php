@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:52:51
- * @LastEditTime: 2021-01-04 10:36:34
+ * @LastEditTime: 2021-01-05 21:06:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\DriverController.php
@@ -82,11 +82,19 @@ class DriverController extends AdminController
         $form->text('name', __('Name'));
         $form->text('number', __('Number'));
         $form->password('password', __('Password'));
+        $form->saving(function (Form $form) {
+            if ($form->password && $form->model()->password != $form->password) {
+                $form->password = bcrypt($form->password);
+            }
+        });
         $form->mobile('phone', __('Phone'));
         $form->text('manage_car', __('Manage car'));
-        // $form->datetime('add_time', __('Add time'))->default(date('Y-m-d H:i:s'));
+        $form->datetime('add_time', __('Add time'))->default(date('Y-m-d H:i:s'));
         // $form->text('remember_token', __('Remember token'));
-        $form->text('num_state', __('Num state'))->default('1');
+        $form->radioButton('num_state', __('Num state'))->options([
+            '0' => '禁用',
+            '1' => '启用',
+            ])->default('1');
 
         return $form;
     }

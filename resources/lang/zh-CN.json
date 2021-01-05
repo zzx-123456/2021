@@ -34,6 +34,8 @@
     "Serial num":"编号",
     "Circle num":"环线序号",
     "Location":"站点位置",
-    "Longitute":"经纬度",
-    "Manage car":"管理车辆"
+    "Latitude":"经度",
+    "Longitude":"纬度",
+    "Manage car":"管理车辆",
+    "Car num":"车辆编号"
 }

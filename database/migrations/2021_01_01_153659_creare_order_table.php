@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:36:59
- * @LastEditTime: 2021-01-01 15:44:14
+ * @LastEditTime: 2021-01-05 20:30:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\database\migrations\2021_01_01_153659_creare_order_table.php
@@ -30,7 +30,7 @@ class CreareOrderTable extends Migration
             $table -> string('station_down') -> notNull();
             $table -> string('people_num',10) -> notNull();
             $table -> timestamp('order_time');
-            $table -> enum('order_state',[1,2,3]) -> notNull();
+            $table -> string('order_state',20) -> notNull();
         });
     }
 

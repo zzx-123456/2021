@@ -2,8 +2,8 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:53:03
- * @LastEditTime: 2021-01-03 14:19:05
- * @LastEditors: your name
+ * @LastEditTime: 2021-01-05 20:21:31
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\CarController.php
  */
@@ -15,6 +15,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use App\Admin\Actions\Post\Detail;
 
 class CarController extends AdminController
 {
@@ -35,7 +36,7 @@ class CarController extends AdminController
         $grid = new Grid(new Car());
 
         $grid->column('id', __('Id'));
-        $grid->column('order_num', __('Order num'));
+        $grid->column('car_num', __('Car num'));
         $grid->column('plate_num', __('Plate num'));
         $grid->column('color', __('Color'));
         $grid->column('type', __('Type'));
@@ -58,7 +59,7 @@ class CarController extends AdminController
         $show = new Show(Car::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('order_num', __('Order num'));
+        $show->field('car_num', __('Car num'));
         $show->field('plate_num', __('Plate num'));
         $show->field('color', __('Color'));
         $show->field('type', __('Type'));
@@ -79,12 +80,22 @@ class CarController extends AdminController
     {
         $form = new Form(new Car());
 
-        $form->text('order_num', __('Order num'));
+        $form->text('car_num', __('Car num'));
         $form->text('plate_num', __('Plate num'));
-        $form->color('color', __('Color'));
-        $form->text('type', __('Type'));
-        $form->text('car_state', __('Car state'))->default('2');
-        $form->text('use_state', __('Use state'))->default('2');
+        $form->text('color', __('Color'));
+        $form->radioButton('type', __('Type'))->options([
+            '小型汽车' => '小型汽车',
+            '中型汽车' => '中型汽车',
+            '大型汽车' => '大型汽车',
+            ]);
+        $form->radioButton('car_state', __('Car state'))->options([
+            '正常' => '正常',
+            '故障' => '故障',
+            ]);
+        $form->radioButton('use_state', __('Use state'))->options([
+            '闲置' => '闲置',
+            '约车使用中' => '约车使用中',
+            ]);
         $form->text('seat_num', __('Seat num'));
         $form->datetime('add_time', __('Add time'))->default(date('Y-m-d H:i:s'));
 

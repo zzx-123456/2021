@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:37:12
- * @LastEditTime: 2021-01-01 15:45:33
+ * @LastEditTime: 2021-01-05 23:26:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\database\migrations\2021_01_01_153712_creare_evaluation_table.php
@@ -26,7 +26,7 @@ class CreareEvaluationTable extends Migration
             $table -> string('order_num',20) -> notNull();
             $table -> string('driver',20) -> notNull();
             $table -> string('user') -> notNull();
-            $table -> enum('grade',[1,2,3,4,5]);
+            $table -> string('grade',20) -> notNull();
             $table -> text('content') -> nullable();
             $table -> timestamp('evaluate_time');
         });

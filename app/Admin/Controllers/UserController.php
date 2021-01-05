@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:52:38
- * @LastEditTime: 2021-01-04 10:16:18
+ * @LastEditTime: 2021-01-05 21:04:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\UserController.php
@@ -58,11 +58,11 @@ class UserController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('nickname', __('Nickname'));
-        $show->field('password', __('Password'));
+        // $show->field('password', __('Password'));
         $show->field('avatar', __('Avatar'));
         $show->field('phone', __('Phone'));
         $show->field('reg_time', __('Reg time'));
-        $show->field('remember_token', __('Remember token'));
+        // $show->field('remember_token', __('Remember token'));
         $show->field('user_state', __('User state'));
 
         return $show;
@@ -79,11 +79,19 @@ class UserController extends AdminController
 
         $form->text('nickname', __('Nickname'));
         $form->password('password', __('Password'));
+        $form->saving(function (Form $form) {
+            if ($form->password && $form->model()->password != $form->password) {
+                $form->password = bcrypt($form->password);
+            }
+        });
         $form->image('avatar', __('Avatar'));
         $form->mobile('phone', __('Phone'));
         $form->datetime('reg_time', __('Reg time'))->default(date('Y-m-d H:i:s'));
-        $form->text('remember_token', __('Remember token'));
-        $form->text('user_state', __('User state'))->default('1');
+        // $form->text('remember_token', __('Remember token'));
+        $form->radioButton('user_state', __('User state'))->options([
+            '0' => '禁用',
+            '1' => '启用',
+            ])->default('1');
         
         return $form;
     }
