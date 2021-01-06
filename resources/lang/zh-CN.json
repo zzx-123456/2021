@@ -37,5 +37,12 @@
     "Latitude":"经度",
     "Longitude":"纬度",
     "Manage car":"管理车辆",
-    "Car num":"车辆编号"
+    "Car num":"车辆编号",
+    "Title":"标题",
+    "Start time":"开始时间",
+    "End time":"结束时间",
+    "Text item":"文本项",
+    "Contents":"内容",
+    "Update at":"更新时间",
+    "Config item":"配置项"
 }

@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-01-01 15:52:38
- * @LastEditTime: 2021-01-05 21:04:44
+ * @LastEditTime: 2021-01-06 09:55:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \testd:\phpstudy_pro\WWW\2021\app\Admin\Controllers\UserController.php
@@ -37,7 +37,7 @@ class UserController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('nickname', __('Nickname'));
         // $grid->column('password', __('Password'));
-        $grid->column('avatar', __('Avatar'))->image('/upload/', 60, 60);
+        $grid->column('avatar', __('Avatar'))->image('/upload/', 40, 40);
         $grid->column('phone', __('Phone'));
         $grid->column('reg_time', __('Reg time'));
         // $grid->column('remember_token', __('Remember token'));
